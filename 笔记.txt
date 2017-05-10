@@ -9,7 +9,10 @@ $ git sataus 状态
 
 
 
-Spring 计时 @Component 在类上面写
+Spring 计时
+ @Component
+相当于通用的注解，当不知道一些类归到哪个层时使用，但是不建议。
+
 @Scheduled计时("0 0 0 0 0 0 0")
 按顺序依次为
 秒（0~59）

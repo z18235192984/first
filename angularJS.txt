@@ -1,0 +1,11 @@
+ng-if同ng-show和ng-hide指令最
+本质区别:它不是通过CSS显示或隐藏DOM节点,而是真正生成或者移除节点.//
+
+
+<input type="search" sng-model="q.age" placeholder="filter friends..." >
+ng-repeat="item in name($scope.name) | filter:q(加了个过滤器,用q.age来过滤显示) track by $index"
+
+$scope.msg = "qweasdzxc";
+{{msg}}==<p ng-bind="msg"></p>
+
+						
