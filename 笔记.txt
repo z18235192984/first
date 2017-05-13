@@ -22,3 +22,14 @@ Spring 计时
 月（0~11）
 天（星期）（1~7 1=SUN 或 SUN，MON，TUE，WED，THU，FRI，SAT）
 7.年份（1970－2099）
+
+static{
+	System.out.println(staticA);
+}
+
+{
+	System.out.println(代码块);	
+}
+
+static(静态代码块)执行过一次再次调用会不再执行.
+优先执行static(静态代码块) 然后是代码块,然后是构造方法.(同一方法的代码块总在构造方法之前.)
