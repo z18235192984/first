@@ -33,3 +33,33 @@ static{
 
 static(静态代码块)执行过一次再次调用会不再执行.
 优先执行static(静态代码块) 然后是代码块,然后是构造方法.(同一方法的代码块总在构造方法之前.)
+
+
+
+
+
+@ResponseBody
+@RequestMapping
+返回类型是个Map
+
+@RequestMapping
+返回类型String 跳转的页面(可以将Map传过去)
+
+@PostMapping
+接受参数的时候,用 
+@RequestBody Map<String, String> reqMap 
+@PostMapping(value = "/pay/wxzf/placeOrder")
+public Response placeOrder(@RequestBody Map<String, String> reqMap)
+angular1 传参 
+$http.post('/wxzf/placeOrder', {参数名称: 参数值}).then(function (res){})
+
+
+@GetMapping
+接受参数的时候,直接可以在方法上接
+@GetMapping(value ="/pay/wxzf/paySuccess")
+public Response getOrder(String 参数名称)
+$http.get('/wxzf/getOrderInfo.json', { params: {参数名称: 参数值} }).then(function(res){})
+
+@GetMapping(value = "/pay/ewm/{参数名称}")
+public Response ewm(@PathVariable String 参数名称)
+$http.get('/pay/jsapi/' + 参数 + '.json').then(function(res){})
