@@ -48,18 +48,47 @@ static(静态代码块)执行过一次再次调用会不再执行.
 @PostMapping
 接受参数的时候,用 
 @RequestBody Map<String, String> reqMap 
-@PostMapping(value = "/pay/wxzf/placeOrder")
+@PostMapping(value = "地址")
 public Response placeOrder(@RequestBody Map<String, String> reqMap)
 angular1 传参 
-$http.post('/wxzf/placeOrder', {参数名称: 参数值}).then(function (res){})
+$http.post('地址', {参数名称: 参数值}).then(function (res){})
 
 
 @GetMapping
 接受参数的时候,直接可以在方法上接
-@GetMapping(value ="/pay/wxzf/paySuccess")
+@GetMapping(value ="地址")
 public Response getOrder(String 参数名称)
-$http.get('/wxzf/getOrderInfo.json', { params: {参数名称: 参数值} }).then(function(res){})
+$http.get('地址.json', { params: {参数名称: 参数值} }).then(function(res){})
 
-@GetMapping(value = "/pay/ewm/{参数名称}")
+@GetMapping(value = "/地址/{参数名称}")
 public Response ewm(@PathVariable String 参数名称)
-$http.get('/pay/jsapi/' + 参数 + '.json').then(function(res){})
+angular1 传参 
+$http.get('地址' + 参数 + '.json').then(function(res){})
+
+
+angular1 
+promise
+$http.get('地址',{params:{参数名称:参数值,参数名称:参数值} }).then(function(res){return res.data.data(从那个地址拿到的数据)}).then(function(res){$scope.xxx = res} 
+if($scope.xxx)
+{pay();}
+else{
+console.log($scope.xxx==null);	
+})
+function pay(){
+	  $http.get('地址' + $scope.xxx + '.json').then(function(){}) 
+}
+
+
+
+传值:$state.go('地址',{参数名字:参数值,参数名字:参数值})
+接值:$stateParams.参数名字;
+
+
+
+jquery
+<select id="selectType">
+<option value="0">0</option>
+<option value="1">1</option>
+</select>
+$("#selectType").val("${data.type}").trigger('change');
+进入页面拿到type的值有下拉框并且会执行下拉框的change方法
